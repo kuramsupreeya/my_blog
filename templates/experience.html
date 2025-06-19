@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  {% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center">Experience</h2>
+{% for exp in experience %}
+<div class="card mb-3 shadow">
+  <div class="card-body">
+    <h5>{{ exp.role }} at {{ exp.company }}</h5>
+    <p><strong>{{ exp.duration }}</strong></p>
+    <p>{{ exp.description }}</p>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

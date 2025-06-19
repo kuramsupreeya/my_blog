@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  {% extends 'base.html' %}
+{% block content %}
+<section class="text-center mb-5">
+  <h2 class="display-5 fw-bold text-primary">Technical Skills & Certifications</h2>
+  <p class="text-muted">A snapshot of the tools and technologies I have mastered, with verifiable credentials.</p>
+</section>
+<h2 class="text-center mb-4">Skills</h2>
+<div class="row">
+  {% for skill in skills %}
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 text-center shadow">
+      <div class="card-body">
+        <h4 class="card-title">{{ skill.name }}</h4>
+        <a href="{{ skill.link }}" target="_blank" class="btn btn-success">View Certificate</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>
